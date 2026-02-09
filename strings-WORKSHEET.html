@@ -45,8 +45,13 @@
 		// If the includes() method returns true, then you have found another vowel)
 		// WARNING: JS is case sensitive, so 'A' is not equal to 'a'. So you'll have
 		// to account for this (luckily there are string methods that can change the capitalizion)
-		
-		
+		let vowelCount = 0;
+		for(let x = 0; x < speech.length; x++){
+            if(vowels.includes(speech[x].toLowerCase())){
+				vowelCount++;
+			}
+        };
+		console.log(vowelCount);
 
 		console.log("Problem 5");
 		// Write a function called isStrongPassword that checks to make sure a password is secure
@@ -56,13 +61,21 @@
 		// When you are done defining the function, test it by uncommenting the console logs below
 
 		// PUT THE FUNCTION HERE
-		isStrongPassword = (password) => {
-			if(){}
+		let hasNumber = false;
+		const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+		const isStrongPassword = (password) => {
+			for(let x = 0; x < password.length; x++){
+				if(numbers.includes(password[x]) && password.length >= 8){
+					return true;
+				}
+			}
+			return false;
 		};
 
-		// console.log(isStrongPassword("foo"));		// should be false
-		// console.log(isStrongPassword("foooooo1"));	// shoould be true
-		// console.log(isStrongPassword("0foooooo"));	// should be true
+
+		console.log(isStrongPassword("foo"));		// should be false
+		console.log(isStrongPassword("foooooo1"));	// shoould be true
+		console.log(isStrongPassword("0foooooo"));	// should be true
 
 
   	});
